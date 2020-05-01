@@ -5,6 +5,6 @@ permalink: /about/
 author: Calvin Feng
 ---
 
-Hello world, I am just testing out this page for now.
+Coming soon!
 
 [Go back](/)
