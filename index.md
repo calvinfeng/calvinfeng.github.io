@@ -29,6 +29,14 @@ tincidunt neque maximus a. Pellentesque scelerisque libero eget mi egestas eleif
 nulla. Nulla facilisi. Morbi commodo justo magna, id laoreet elit finibus sed. Proin ut mollis velit.
 Ut placerat interdum consectetur. Nunc ipsum arcu, ullamcorper non faucibus ac, suscipit vitae lacus.
 
+### [Popcorn the Movie Recommender](https://github.com/calvinfeng/popcorn)
+
+<img alt="Popcorn" width="500" src="assets/screenshot/popcorn.png" />
+
+### [MegaPx](https://github.com/calvinfeng/megapx)
+
+<img alt="MegaPx" width="500" src="assets/screenshot/megapx.png" />
+
 ## Tools
 
 Over the years I have worked with many different tools for different project needs. This is a high
@@ -48,3 +56,5 @@ level overview of my "gear" list.
 <img alt="Apache Kafka" width="50" src="assets/img/kafka.png" />
 <img alt="AWS Elastic Beanstalk" width="50" src="assets/img/elasticbeanstalk.png">
 <img alt="AWS SageMaker" width="50" src="assets/img/sagemaker.png">
+
+
