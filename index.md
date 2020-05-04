@@ -29,6 +29,8 @@ I was trying to run TensorFlow with Go using C binding. It worked! But in retros
 think the effort is worth production usage. I'd rather build a gRPC server in Python and let Go talk
 to Python to run TF models. Nowadays it's even easier to just deploy the model on a SageMaker endpoint.
 
+<img alt="TensorGo" width="500" src="assets/screenshot/tensorgo.png" />
+
 ### [Popcorn the Movie Recommender](https://github.com/calvinfeng/popcorn)
 
 I was experimenting with matrix factorization and built a recommendation engine using MovieLens'
