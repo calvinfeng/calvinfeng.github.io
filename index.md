@@ -13,13 +13,21 @@ layout: default
 
 ### [Machine Learning Notebook](https://calvinfeng.gitbook.io/machine-learning-notebook/)
 
-This is my central repository for collecting all my notes and references on machine learning.
+This is my central repository for collecting all my notes and references on machine learning, which
+includes a lot of mathematical derivations to better my own understanding of every algorithm I learned.
 
 ### [My Playground: Guitar Journey](http://playground-dev.eba-ktvvwwav.us-west-2.elasticbeanstalk.com/)
 
-I used to play guitar when I was a teenager. I stopped because I was too lazy to practice. Well,
-many years later, I've grown to be a more disciplined man. I built a tool to keep track of my
-timeline to monitor my progress and improvement.
+I started learning guitar when I was a teenager. I didn't continue and stopped because I enjoyed the
+glory of rock stars but couldn't endure the tedium of everyday practices. Well, many years later,
+I've grown to be a more disciplined man. I built a tool to keep track of my timeline to monitor my
+progress and improvement.
+
+### [TensorFlow in Go](https://github.com/calvinfeng/tensorgo)
+
+I was trying to run TensorFlow with Go using C binding. It worked! But in retrospective, I don't
+think the effort is worth production usage. I'd rather build a gRPC server in Python and let Go talk
+to Python to run TF models. Nowadays it's even easier to just deploy the model on a SageMaker endpoint.
 
 ### [Popcorn the Movie Recommender](https://github.com/calvinfeng/popcorn)
 
@@ -76,5 +84,3 @@ level overview of my "gear" list.
 <img alt="Apache Kafka" width="50" src="assets/img/kafka.png" />
 <img alt="AWS Elastic Beanstalk" width="50" src="assets/img/elasticbeanstalk.png">
 <img alt="AWS SageMaker" width="50" src="assets/img/sagemaker.png">
-
-
