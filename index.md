@@ -59,9 +59,9 @@ learning notebook. I ran out of quota to make more free GitBooks.
 
 This is my textbook notes on Sebastian Thrun's Probablistic Robotics.
 
-### [CS8803 Introduction to Operating System](https://calvinfeng.gitbook.io/cs8803/)
+### [Georgia Tech OMSCS](https://calvinfeng.gitbook.io/omscs/)
 
-This is my course note on Georgia Tech's CS8803.
+This is my repostory for course notes from Georgia Tech OMSCS.
 
 ### [Go Academy](https://go-academy.gitbook.io/go-academy/)
 
