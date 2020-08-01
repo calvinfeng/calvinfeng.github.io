@@ -7,7 +7,12 @@ layout: default
 
 # Index
 
-[About me](./about)
+[About me](http://playground-dev.eba-ktvvwwav.us-west-2.elasticbeanstalk.com/about)
+
+## Blog Posts
+
+[Physics of Major Scale](./001_physics_of_major_scale) attempts to explain why is Major scale
+structured the way it is from a classical mechanics perspective.
 
 ## Projects
 
