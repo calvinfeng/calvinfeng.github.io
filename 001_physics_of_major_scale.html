@@ -13077,7 +13077,23 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h1><p>I want to provide a physics and mathematical argument to show why Major scale is designed the way it is. This involves applying Newtonian mechanics on a string under tension and solving for its oscillatory motion as a function of time. The last time I did 2nd order orindary differential equation was about 10 years ago when I was a freshman in college. My mathematica shortcuts will be a bit rusty. I will attach reference materials for parts where I fail to explain thoroughly.</p>
+<h1 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>People are usually introduced to string vibration in high school physics courses. The famous Giancoli textbook introduces student to fundamental frequency and harmonics of a vibrating string with fixed ends, also known as standing wave.</p>
+<p>For example, <a href="https://www.physicsclassroom.com/class/waves/Lesson-4/Harmonics-and-Patterns">Harmonics and Patterns from physicsclassroom.com</a></p>
+<p>Personally when I learned it in high school, it didn't actually make sense to me. I was shown that strings vibrate in that particularly way without exactly knowing why or what is the implication of those vibrations until much much later.</p>
+<p>I want to write out how to apply Newtonian mechanics on a string under tension and solve for its oscillatory motion as a function of time. Here are the prerequisites to understand what I am going to write.</p>
+<ul>
+<li>Newton's Second Law of Motion</li>
+<li>Second-order Ordinary Differential Equation</li>
+<li>Fourier Analysis</li>
+</ul>
+<p>The last time I did this was almost 10 years ago. I will include reference materials I used to refresh my memory.</p>
 
 </div>
 </div>
@@ -13095,7 +13111,28 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Wave-Equation">Wave Equation<a class="anchor-link" href="#Wave-Equation">&#182;</a></h1><p>After a small perturbation, the tension of the string acts as a restoration force. If the displacement is small, the horizontal force can be approximated to zero. We only need to consider the vertical force using $y$ to denote vertical displacement.</p>
+<h1 id="Wave-Equation">Wave Equation<a class="anchor-link" href="#Wave-Equation">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The wave equation is a well studied mathematical model. It has applications in mechnical engineeing like heat and acoustic energy transfer in materials, in electrical engineering where eletromagnetic waves propagate through space, and in quantum mehanics where subatomic particles act as a wavefunction of probability.</p>
+<p>Usually people denote $u$ as the quantity to solve for, in our case we call it $y$ because it's the vertical displacemenet of string we are interested in. Thus, our version of wave quation is stated as follows.</p>
+$$
+\frac{\partial^2 y}{\partial t^2}  = c^2 \frac{\partial^2 y}{\partial x^2} 
+$$<p>The $c^2$ is just a constant where,</p>
+$$
+c = \sqrt{\frac{T}{\mu}}
+$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Model-String-Motion-with-Wave-Equation">Model String Motion with Wave Equation<a class="anchor-link" href="#Model-String-Motion-with-Wave-Equation">&#182;</a></h2><p>After a small perturbation, the tension of the string acts as a restoration force. If the displacement is small, the horizontal force can be approximated to zero. We only need to consider the vertical force using $y$ to denote vertical displacement.</p>
 $$
 \Sigma F_y = -Tsin\theta_1 -T'sin\theta_2 = m\frac{\partial^2 y}{\partial t^2} 
 $$<p>By definition, Newton's Second Law states that force is mass times acceleration.</p>
@@ -13124,7 +13161,7 @@ $$
 $$<p>The rightmost term is the definition of the derivative with respect to $x$ since the difference is over an infinitesimal interval $dx$. The expression is literally saying, the change of $\frac{\partial y}{\partial x}$ with respect to an extremely interval of $x$. Now we can simplify the whole force equation down to,</p>
 $$
 \frac{\mu}{T}\frac{\partial^2 y}{\partial t^2}  = \frac{\partial^2 y}{\partial x^2} 
-$$<p>This is known as the <a href="https://en.wikipedia.org/wiki/Wave_equation">wave equation</a>. The solution to wave equation depends on boundary conditions which we will see in the next section. Please keep in mind that we are trying to find a function that represents $y$ as a function of $x$ and time. It describes the movement of string, going up and down in time.</p>
+$$<p>This is known as the <a href="https://en.wikipedia.org/wiki/Wave_equation">wave equation</a> for the string motion. The solution to wave equation depends on boundary conditions which we will see in the next section. Please keep in mind that we are trying to find a function that represents $y$ as a function of $x$ and time. It describes the movement of string, going up and down in time.</p>
 $$
 y = f(x, t)
 $$
@@ -13134,30 +13171,37 @@ $$
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="String-Vibration-Solution">String Vibration Solution<a class="anchor-link" href="#String-Vibration-Solution">&#182;</a></h1><p>The wave equation is a well studied mathematical model. It has applications in mechnical engineeing like heat and acoustic energy transfer in materials, in electrical engineering where eletromagnetic waves propagate through space, and in quantum mehanics where subatomic particles act as a wavefunction of probability.</p>
-<p>Usually people denote $u$ as the quantity to solve for, in our case we call it $y$ because it's the vertical displacemenet of string we are interested in.</p>
-<p>Thus, our version of wave quation is stated as follows.</p>
-$$
-\frac{\partial^2 y}{\partial t^2}  = c^2 \frac{\partial^2 y}{\partial x^2} 
-$$<p>The $c^2$ is just a constant where,</p>
-$$
-c = \sqrt{\frac{T}{\mu}}
-$$
+<h1 id="String-Vibration-Solution">String Vibration Solution<a class="anchor-link" href="#String-Vibration-Solution">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Conditions">Conditions<a class="anchor-link" href="#Conditions">&#182;</a></h2><p>The wave equation is a second-order ordinary differential equation. This is like
+<h2 id="Initial-&amp;-Boundary-Conditions-(IC-&amp;-BC)">Initial &amp; Boundary Conditions (IC &amp; BC)<a class="anchor-link" href="#Initial-&amp;-Boundary-Conditions-(IC-&amp;-BC)">&#182;</a></h2><p>The wave equation is a second-order ordinary differential equation. This is like
 the algebra for Calculus. The wave equation alone does not provide any solution to the problem at hand. Solutions are yield when we apply extra constraints like initial conditions and boundary conditions. The unknown is $y$ and this is a second order differential equation so we need at least 2 initial conditions and 2 boundary conditions for our specific case.</p>
-<h3 id="Initial-Conditions">Initial Conditions<a class="anchor-link" href="#Initial-Conditions">&#182;</a></h3><p>At time $t = 0$, our initial vertical displacement is a function of $x$. Since at that particular moment we don't know what initial configuration the string is in, we can give it a high level description.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Initial-Conditions">Initial Conditions<a class="anchor-link" href="#Initial-Conditions">&#182;</a></h3><p>As one can reason that, horizontal axis $x$ along the string has no dependency on time variable $t$, and vice versa. We can using the following equation to state that observation. The vertical displacement of string is independent of time at $t = 0$.</p>
 $$
 y(x, t = 0) = f(x)
-$$<p>Same for velocity</p>
+$$<p>We don't know what is $f(x)$ but we will solve for it. The same logic applies for the velocity of the string. The vertical velocity of string is independent of time at $t = 0$.</p>
 $$
 \frac{\partial y}{\partial t}(x, t = 0) = g(x)
 $$<p></p>
+<p>We don't know what is $g(x)$ and we will solve for it.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Boundary-Conditions">Boundary Conditions<a class="anchor-link" href="#Boundary-Conditions">&#182;</a></h3><p>The boundary conditions are easy to understand. We know there is no displacement at the two ends of the string because they are fixed. We use $L$ to represent the length of the string.</p>
 $$
 y(0, t) = 0
@@ -13171,18 +13215,39 @@ $$
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Ordinary-Differential-Equation-(ODE)">Ordinary Differential Equation (ODE)<a class="anchor-link" href="#Ordinary-Differential-Equation-(ODE)">&#182;</a></h2><p>By definition, an ordinary differential equation is a differential equation containing one or more functions of one independent variable and derivatives of those functions. The key insight is that these variables must be independent. For example, time and $x$ are independent in our case.</p>
-<p>An ODE has the following form, where $a$, $b$, and $c$ are arbitrary differentiable functions that do not need to be linear and $y', ..., y^n$ are successive derivatives of the unknown $y$ function of $t$. This equation is said to be homogeneous[1].</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Homoegenous">Homoegenous<a class="anchor-link" href="#Homoegenous">&#182;</a></h3><p>An ODE has the following form, where $a$, $b$, and $c$ are arbitrary differentiable functions that do not need to be linear and $y', ..., y^n$ are successive derivatives of the unknown $y$ function of $t$. This equation is said to be homogeneous[1].</p>
 $$
 a(t)y'' + b(t)y' + c(t)y = 0
 $$<p>With this form, the equation has a general solution that we can simply plug in and solve. We will expand on this general solution a bit later.</p>
-<p>References[1]: Elementary Differential Equations, Boyce &amp; DiPrima</p>
+<p>References [1]: <a href="https://www.amazon.com/Elementary-Differential-Equations-Boyce/dp/047003940X">Elementary Differential Equations, Boyce &amp; DiPrima</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="General-Solution-Form">General Solution Form<a class="anchor-link" href="#General-Solution-Form">&#182;</a></h3><p>To simplify the mathetical derivation, let's assume $a$, $b$, and $c$ are arbitrary constants because later on the vibration equation will have them as constants. We call $r$ the root of the polynomimal equation which is coming up soon, the general solution has the following form.</p>
 $$
 (ar^2 + br + c)e^{rt} = 0
 $$<p>The following is known as characteristic equation for the differential equation.</p>
 $$
 ar^2 + br + c = 0
-$$<h3 id="General-Solution-with-Complex-Root">General Solution with Complex Root<a class="anchor-link" href="#General-Solution-with-Complex-Root">&#182;</a></h3><p>There may exist a complex solution the quadratic equation above, whenever the discriminant $b^2 - 4ac$ is positive. For example,</p>
+$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="General-Solution-with-Complex-Root">General Solution with Complex Root<a class="anchor-link" href="#General-Solution-with-Complex-Root">&#182;</a></h3><p>There may exist a complex solution the quadratic equation above, whenever the discriminant $b^2 - 4ac$ is positive. For example,</p>
 $$
 r = -3 + 6i
 $$<p>If $r$ is complex, let's remind ourselves of Euler's equation.</p>
@@ -13199,7 +13264,14 @@ $$<p>You can verify the solution by substitute this equation into the original d
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Final-Solution-to-String-Vibration">Final Solution to String Vibration<a class="anchor-link" href="#Final-Solution-to-String-Vibration">&#182;</a></h2><h3 id="Separation-of-variables">Separation of variables<a class="anchor-link" href="#Separation-of-variables">&#182;</a></h3><p>Since $x$ and $t$ are independent of each other, this allows us to define the following, where $p$ and $q$ are some unknown functions we need to solve.</p>
+<h2 id="Final-Solution-to-String-Vibration">Final Solution to String Vibration<a class="anchor-link" href="#Final-Solution-to-String-Vibration">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Separation-of-variables">Separation of variables<a class="anchor-link" href="#Separation-of-variables">&#182;</a></h3><p>Since $x$ and $t$ are independent of each other, this allows us to define the following, where $p$ and $q$ are some unknown functions we need to solve.</p>
 $$
 y(x, t) = p(x)q(t)
 $$<p>Therefore, the wave equation can be expressed like this.</p>
@@ -13209,6 +13281,13 @@ $$<p>We re-arrange the terms.</p>
 $$
 \frac{1}{c^2 q(t)} \frac{\partial^2 q}{\partial t^2} = \frac{1}{p(x)}\frac{\partial^2 p}{\partial x^2} = \text{some arbitrary constant} = K
 $$<p>We call that constant $K$ for now. Sometimes other people call it $\lambda$ but I don't want to create extra confusion by naming conflicts.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Substitute-in-General-Solution-for-$p(x)$">Substitute in General Solution for $p(x)$<a class="anchor-link" href="#Substitute-in-General-Solution-for-$p(x)$">&#182;</a></h3><p>For x dependent function, the characteristic equation is</p>
 $$
 r^2 - K = 0 
@@ -13228,7 +13307,14 @@ p(x) = p_1(x) + p_2(x) = c_1 e^{\lambda x} cos(\mu x) + c_2 e^{\lambda x} sin(\m
 $$<p>Then now we can express our solution in terms of $\lambda$ and $\mu$. Notice that $\lambda = 0$ in our case.</p>
 $$
 p(x) = c_1 cos(\sqrt{K} x) + c_2 sin(\sqrt{K} x)
-$$<h3 id="Apply-Boundary-Conditions">Apply Boundary Conditions<a class="anchor-link" href="#Apply-Boundary-Conditions">&#182;</a></h3><p>To solve for final solution, i.e. to know what $K$ is, we apply boundary conditions.</p>
+$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Apply-Boundary-Conditions">Apply Boundary Conditions<a class="anchor-link" href="#Apply-Boundary-Conditions">&#182;</a></h3><p>To solve for final solution, i.e. to know what $K$ is, we apply boundary conditions.</p>
 $$
 y(x = 0, t) = y(x = L, t) = p(x = 0\;\text{or}\;x = L)q(t) = 0
 $$<p>It means at the beginning and end of the string, there is no vibration, no vertical movement. This means only the sine term can stay. The following is what fits the boundary condition. Whenever $x = 0$ or $x$ is a $n$ multiple of the string length.</p>
@@ -13237,10 +13323,24 @@ p_n(x) = sin(\frac{n \pi}{L}x)
 $$<p>Then we can conclude that</p>
 $$
 K = \frac{n^2 \pi^2}{L^2} \quad\text{for n = 1, 2, 3, ..., infinity}
-$$<h3 id="Solve-for-$q(t)$">Solve for $q(t)$<a class="anchor-link" href="#Solve-for-$q(t)$">&#182;</a></h3><p>Using the same procedure above, I will skip the tedious part and jump to conclusion.</p>
+$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Solve-for-$q(t)$">Solve for $q(t)$<a class="anchor-link" href="#Solve-for-$q(t)$">&#182;</a></h3><p>Using the same procedure above, I will skip the tedious part and jump to conclusion.</p>
 $$
 q_n(t) = c_1 cos(\frac{n \pi c}{L} t) +  c_2 sin(\frac{n \pi c}{L} t)
-$$<h3 id="Final-Solution">Final Solution<a class="anchor-link" href="#Final-Solution">&#182;</a></h3>$$
+$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Final-Solution-Part-A">Final Solution Part A<a class="anchor-link" href="#Final-Solution-Part-A">&#182;</a></h3>$$
 y_n(x, t) = p(x)q(t) = \left[ A_n cos(\frac{n \pi c}{L} t)  + B_n sin(\frac{n \pi c}{L} t) \right]sin(\frac{n \pi}{L} x)
 $$<p>Recall that</p>
 $$
@@ -13248,10 +13348,209 @@ c = \sqrt{\frac{T}{\mu}}
 $$<p>Thus,</p>
 $$
 y_n(x, t) = p(x)q(t) = \left[ A_n cos(\frac{n \pi}{L}\sqrt{\frac{T}{\mu}} t)  + B_n sin(\frac{n \pi}{L}\sqrt{\frac{T}{\mu}} t) \right]sin(\frac{n \pi}{L} x)
-$$<p>Using <strong>superposition principle</strong>,</p>
+$$<p><strong>Superposition principle</strong> states that for all linear systems, the net response caused by two or more stimuli is the sum of the responses that would have been caused by each stimulus individually.</p>
+<p>We can represent our complete solution as an infinite summation series of $y_n$, where $n$ ranges from 1 to infinity.</p>
 $$
 y(x, t) = \Sigma^{\infty}_{n=1} \left[ A_n cos(\frac{n \pi}{L}\sqrt{\frac{T}{\mu}} t)  + B_n sin(\frac{n \pi}{L}\sqrt{\frac{T}{\mu}} t) \right]sin(\frac{n \pi}{L} x)
+$$<p>I think the most confusing part to most people is the justification for the infinite series as a solution to the wave equation. For example, <a href="https://math.stackexchange.com/questions/3461602/justifying-that-infinite-sum-of-solutions-to-wave-equation-is-also-a-solution">justifying that infinite sum of solutions to wave equation is also a solution</a>. I think we have to prove that this infinite series is always converging. But I don't think we want to go down that rabbit hole. We have already done plenty math.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Final-Part-B">Final Part B<a class="anchor-link" href="#Final-Part-B">&#182;</a></h3><p>We haven't figured out what are the $A_n$ and $B_n$. They are Fourier coefficients of the wave. They represent the contribution strength of each subcomponent wave. We just need to substitute in initial conditions to solve for these arbitrary constants.</p>
+<p>Let's apply the first initial condition. We will see that this is just a Fourier series with period equals to the length of the string $L$.</p>
 $$
+y(x, t=0) = f(x) = \Sigma^{\infty}_{n=1} A_n sin(\frac{n\pi}{L}x)
+$$<p>To solve for Fourier coefficient, we apply the following integral.</p>
+<blockquote><p>I am not going to show proof or derivation on Fourier methods here, just to 
+  not derail from original topic too much.</p>
+</blockquote>
+$$
+A_n = \frac{2}{L} \int^{L}_{0} f(x) sin(\frac{n\pi}{L}x) dx
+$$<p></p>
+<p>Then we apply the second initial condition. But we actually need to solve for the derivative of $y$ first with respect to time. I will use $c$ as the tension mass constant again to reduce my typing.</p>
+$$
+\frac{\partial y}{\partial t}(x, t) = \Sigma^{\infty}_{n=1} A_n sin(\frac{n\pi}{L}x)\left( -\frac{n\pi c}{L}sin(\frac{n\pi c}{L} t)\right) + B_n sin(\frac{n\pi}{L}x)\left(\frac{n\pi c}{L} cos(\frac{n\pi c}{L} t)\right)
+$$<p>We plug in $t=0$, most sine terms will become zero and we are left with a simple expression.</p>
+$$
+\frac{\partial y}{\partial t}(x, t = 0) = g(x) = \Sigma^{\infty}_{n=1} B_n sin(\frac{n\pi}{L}x)\frac{n\pi c}{L}
+$$<p>This is another Fourier series.</p>
+$$
+B_n = \frac{2}{L}\int^{L}_{0} \frac{L}{n\pi}\sqrt{\frac{\mu}{T}}g(x) sin(\frac{n\pi}{L}) dx
+$$<p>In the subsequent sections, I will use arbitrary $A_n$ and $B_n$ to illustrate the physical phenomenon without having readers to read through another text wall of mathematical derivation.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Connection-to-Music">Connection to Music<a class="anchor-link" href="#Connection-to-Music">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Harmonics">Harmonics<a class="anchor-link" href="#Harmonics">&#182;</a></h2><p>Each value of <code>n</code> gives a normal mode of vibration. We called the frequencies of these modes the <strong>natural frequencies</strong> of the string. When <code>n=1</code>, we call it the fundamental frequency of the string.</p>
+$$
+f_n = n\frac{1}{2\pi L}\sqrt{\frac{\pi^2 T}{\mu L^2}} = n\frac{1}{2}\sqrt{\frac{T}{\mu L^4}} = n f_0
+$$<ul>
+<li>The first harmonic is $f_0$</li>
+<li>The second harmonic is $f_1$</li>
+<li>The third harmonic is $f_2$</li>
+<li>And etc...</li>
+</ul>
+<p>If we visualize the harmonics on a string, it would look like this.</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Moodswingerscale.svg" alt="Harmonics"></p>
+<p>As a string vibrates, it produces all those harmonics at once, each harmonic stacks on top of each other. In music we assign each of these natural frequencies(harmonics) a name or interval names like octave, perfect fifth, perfect fourth and etc...</p>
+<p>For example, the note <code>A4</code> has 440Hz as its fundamental frequency.</p>
+$$
+f_{A4}(n=1) = 440
+$$<p>Its first harmonic has 880Hz which is the frequency of <code>A5</code>.</p>
+$$
+f_{A4}(n=2) = f_{A5}(n=1) = 880
+$$<p>Its second harmonic has 1320Hz which is the frequency of <code>E6</code></p>
+$$
+f_{A4}(n=3) = f_{E6}(n=1) = 1320
+$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Harmonics-and-Consonance">Harmonics and Consonance<a class="anchor-link" href="#Harmonics-and-Consonance">&#182;</a></h2><p>The harmonics are the normal model of vibration for a string as stated before. This actually implies that if you have two strings, and you tune one string to <code>A4</code> and another string to <code>A5</code>. The first string is producing a fundamental frequency while the second string is producing a fundamental frequency that is a first harmonic of the first string. These two strings will ring together <strong>harmoniously</strong>. This is essentially what it means to be in harmony. We produce a set of notes that can stack on each other on the waveform constructively. Our brain will interpret these signals as pleasantly sounding.</p>
+<p>We use the term <strong>consonance</strong> to describe how <em>pleasantly</em> two notes sound together. We use the term <strong>dissonance</strong> to describe how <em>unpleasantly</em> two notes sound together.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Consonant-Intervals-of-Major-Scale">Consonant Intervals of Major Scale<a class="anchor-link" href="#Consonant-Intervals-of-Major-Scale">&#182;</a></h2><p>We use a 12-tone equal temperament system in modern music instruments. We choose a note to be our root and use that root(key) as the fundamental frequency of our musical arrangement(song). Here are the 12 different possible intervals or frequency jump if you prefer the mathematical description.</p>
+<table>
+<thead><tr>
+<th>Interval Name</th>
+<th>Semitones</th>
+<th>Frequency Ratio with with Respect to Root</th>
+<th>Example</th>
+<th>Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Root</td>
+<td>0</td>
+<td>$2^{0/12}$</td>
+<td>A4</td>
+<td>440</td>
+</tr>
+<tr>
+<td>Minor 2nd</td>
+<td>1</td>
+<td>$2^{1/12}$</td>
+<td>A#4/Bb4</td>
+<td>440 * $2^{1/12}$</td>
+</tr>
+<tr>
+<td>Major 2nd</td>
+<td>2</td>
+<td>$2^{2/12}$</td>
+<td>B4</td>
+<td>440 * $2^{2/12}$</td>
+</tr>
+<tr>
+<td>Minor 3rd</td>
+<td>3</td>
+<td>$2^{3/12}$</td>
+<td>C5</td>
+<td>440 * $2^{3/12}$</td>
+</tr>
+<tr>
+<td>Major 3rd</td>
+<td>4</td>
+<td>$2^{4/12}$</td>
+<td>C#5/Db5</td>
+<td>440 * $2^{4/12}$</td>
+</tr>
+<tr>
+<td>Perfect 4th</td>
+<td>5</td>
+<td>$2^{5/12}$</td>
+<td>D5</td>
+<td>440 * $2^{5/12}$</td>
+</tr>
+<tr>
+<td>Tritone</td>
+<td>6</td>
+<td>$2^{6/12}$</td>
+<td>D#5/Eb5</td>
+<td>440 * $2^{6/12}$</td>
+</tr>
+<tr>
+<td>Perfect 5th</td>
+<td>7</td>
+<td>$2^{7/12}$</td>
+<td>E5</td>
+<td>440 * $2^{7/12}$</td>
+</tr>
+<tr>
+<td>Minor 6th</td>
+<td>8</td>
+<td>$2^{8/12}$</td>
+<td>F5</td>
+<td>440 * $2^{8/12}$</td>
+</tr>
+<tr>
+<td>Major 6th</td>
+<td>9</td>
+<td>$2^{9/12}$</td>
+<td>F#5/Gb5</td>
+<td>440 * $2^{9/12}$</td>
+</tr>
+<tr>
+<td>Minor 7th</td>
+<td>10</td>
+<td>$2^{10/12}$</td>
+<td>G5</td>
+<td>440 * $2^{10/12}$</td>
+</tr>
+<tr>
+<td>Major 7th</td>
+<td>11</td>
+<td>$2^{11/12}$</td>
+<td>G#5/Ab5</td>
+<td>440 * $2^{11/12}$</td>
+</tr>
+<tr>
+<td>Octave</td>
+<td>12</td>
+<td>$2^{12/12}$</td>
+<td>A5</td>
+<td>440 * $2^{12/12}$</td>
+</tr>
+</tbody>
+</table>
+<p>Researches have shown which interval is most consonant.</p>
+<p><img src="https://www.pnas.org/content/pnas/112/36/11155/F1.large.jpg?width=800&amp;height=600&amp;carousel=1" alt="Consonance Rank"></p>
+<p>P8 refers to the perfect 8th, or simply called octave. This is basically saying <code>A4</code> and <code>A5</code> are most consonant.</p>
+<p>The next most consonant note is P5 which is perfect 5th. The ratio is approximately 3/2.</p>
+$$
+\frac{3}{2} = 1.5 \approx 2^{7/12} = 1.498
+$$<p>The second harmonics of <code>A4</code> is <code>E6</code> because of the integer factor of 3.</p>
+$$
+f_{A4}(n=3) = f_{E6}(n=1) = 1320
+$$<p>But <code>E6</code> is equivalent to <code>E5</code> if we lower it by an octave. If <code>A4</code> is harmonious to <code>E6</code>, and <code>E6</code> is very harmonious to <code>E5</code>, then we can conclude that <code>A4</code> is harmonious to <code>E5</code>.</p>
+$$
+\frac{1}{2} = f_{E5} = \frac{3}{2} f_{A4}
+$$<p>Using the same logic, we can show that all the harmonious intervals produce the first natural frequencies of the root note.</p>
+<p>References [2]: <a href="https://www.pnas.org/content/112/36/11155">A biological rationale for musical consonance</a></p>
+
 </div>
 </div>
 </div>
