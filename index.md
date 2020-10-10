@@ -68,9 +68,10 @@ This is my textbook notes on Sebastian Thrun's Probablistic Robotics.
 
 This is my repostory for course notes from Georgia Tech OMSCS.
 
-### [Go Academy](https://go-academy.gitbook.io/go-academy/)
+### [Go Notebook](https://calvinfeng.gitbook.io/gonotebook/)
 
-This is a tutorial I wrote for Golang. It is also a personal reference for Go patterns I learned.
+This started out as a tutorial and then it beecame my personal references to Go syntax, tools, and
+design patterns.
 
 ## Tools
 
