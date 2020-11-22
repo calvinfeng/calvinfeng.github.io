@@ -7,7 +7,7 @@ layout: default
 
 # Index
 
-[About me](http://playground-dev.eba-ktvvwwav.us-west-2.elasticbeanstalk.com/about)
+[About me](http://calvin-playground.us-west-2.elasticbeanstalk.com/about)
 
 ## Blog Posts
 
@@ -21,7 +21,7 @@ structured the way it is from a classical mechanics perspective.
 This is my central repository for collecting all my notes and references on machine learning, which
 includes a lot of mathematical derivations to better my own understanding of every algorithm I learned.
 
-### [My Playground: Guitar Journey](http://playground-dev.eba-ktvvwwav.us-west-2.elasticbeanstalk.com/)
+### [My Playground: Guitar Journey](http://calvin-playground.us-west-2.elasticbeanstalk.com/)
 
 I started learning guitar when I was a teenager. I didn't continue and stopped because I enjoyed the
 glory of rock stars but couldn't endure the tedium of everyday practices. Well, many years later,
