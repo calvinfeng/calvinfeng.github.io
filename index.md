@@ -21,12 +21,12 @@ structured the way it is from a classical mechanics perspective.
 This is my central repository for collecting all my notes and references on machine learning, which
 includes a lot of mathematical derivations to better my own understanding of every algorithm I learned.
 
-### [My Playground: Guitar Journey](http://calvin-playground.us-west-2.elasticbeanstalk.com/)
+### [Guitar Playground](https://guitar-playground.herokuapp.com/)
 
-I started learning guitar when I was a teenager. I didn't continue and stopped because I enjoyed the
-glory of rock stars but couldn't endure the tedium of everyday practices. Well, many years later,
-I've grown to be a more disciplined man. I built a tool to keep track of my timeline to monitor my
-progress and improvement.
+Ever since September 2019, guitar has become a huge hobby of mine. I want to keep track of my
+progress in learning the instrument. The best way to do that is through recording myself. I built
+a little tool to display my recordings as a timeline. It pulls data from YouTube and render them
+chronologically.
 
 ### [TensorFlow in Go](https://github.com/calvinfeng/tensorgo)
 
