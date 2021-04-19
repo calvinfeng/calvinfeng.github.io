@@ -21,12 +21,11 @@ structured the way it is from a classical mechanics perspective.
 This is my central repository for collecting all my notes and references on machine learning, which
 includes a lot of mathematical derivations to better my own understanding of every algorithm I learned.
 
-### [Guitar Playground](https://guitar-playground.herokuapp.com/)
+### [Guitar Practice Log](https://guitar-practice-log.herokuapp.com/timeline)
 
 Ever since September 2019, guitar has become a huge hobby of mine. I want to keep track of my
 progress in learning the instrument. The best way to do that is through recording myself. I built
-a little tool to display my recordings as a timeline. It pulls data from YouTube and render them
-chronologically.
+a little tool to log my progress and hours spent on the skill development.
 
 ### [TensorFlow in Go](https://github.com/calvinfeng/tensorgo)
 
